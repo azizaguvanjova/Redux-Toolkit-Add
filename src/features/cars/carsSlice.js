@@ -1,20 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const carSlice = createSlice({
+  name: "cars",
   initialState: {
-    count: 0,
+    cars: [],
   },
   reducers: {
-    increment: (state) => {
-      state.count += 1
+    addCar: (state, action) => {
+      state.cars.push({ ...action.payload, id: crypto.randomUUID() });
     },
-    decrement: (state) => {
-      state.count -= 1
+    removeCar: (state, action) => {
+      state.cars = state.cars.filter((car) => car.id !== action.payload);
     },
   },
-})
+});
 
-export const { increment, decrement } = counterSlice.actions
+export const { addCar, removeCar } = carSlice.actions;
 
-export default counterSlice.reducer
+export default carSlice.reducer;

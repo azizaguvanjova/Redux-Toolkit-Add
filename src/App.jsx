@@ -5,7 +5,7 @@ export default function App() {
   return (
     <div className='container'>
       <CarForm />
-      <h3 className='title'>Arabalarım</h3>
+      <h3 className='text-bold text-2xl'>Arabalarım</h3>
       <CarList />
     </div>
   )

@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './features/cars/carsSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import carReducer from "./features/cars/carsSlice";
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    cars: carReducer,
   },
-})
+});
